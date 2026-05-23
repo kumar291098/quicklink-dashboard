@@ -205,7 +205,11 @@ function App() {
   async function handleOpen(link) {
     try {
       const result = await fetchJson(`/api/links/${link.id}/open`, { method: 'POST' })
-      window.open(result.url, '_blank', 'noopener,noreferrer')
+      if (window.quicklink?.openExternalUrl) {
+        await window.quicklink.openExternalUrl(result.url)
+      } else {
+        window.open(result.url, '_blank', 'noopener,noreferrer')
+      }
       await Promise.all([loadLinksData(), refreshPanels()])
     } catch {
       setError('The link could not be opened.')

@@ -24,7 +24,12 @@ function LinkCard({
         <img src={link.iconUrl} alt="" className="link-icon" />
         <div className="capsule-title-group">
           <h4>{link.title}</h4>
-          <a href={link.url} target="_blank" rel="noreferrer">
+          <a
+            href={link.url}
+            onClick={(event) => {
+              event.preventDefault()
+            }}
+          >
             {link.url}
           </a>
         </div>

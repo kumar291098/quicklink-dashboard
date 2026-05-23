@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain, shell } = require('electron')
 const { spawn } = require('child_process')
 const http = require('http')
 const path = require('path')
@@ -19,7 +19,25 @@ function createWindow() {
     minHeight: 760,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
+      contextIsolation: true,
+      nodeIntegration: false,
     },
+  })
+
+  mainWindow.webContents.setWindowOpenHandler(({ url }) => {
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+      shell.openExternal(url)
+    }
+
+    return { action: 'deny' }
+  })
+
+  mainWindow.webContents.on('will-navigate', (event, url) => {
+    const currentUrl = mainWindow.webContents.getURL()
+    if (url !== currentUrl && (url.startsWith('http://') || url.startsWith('https://'))) {
+      event.preventDefault()
+      shell.openExternal(url)
+    }
   })
 
   return mainWindow
@@ -185,4 +203,12 @@ app.on('window-all-closed', () => {
 
 app.on('before-quit', () => {
   stopBackend()
+})
+
+ipcMain.handle('open-external-url', async (_event, url) => {
+  if (typeof url !== 'string' || (!url.startsWith('http://') && !url.startsWith('https://'))) {
+    throw new Error('Only http and https URLs can be opened externally.')
+  }
+
+  await shell.openExternal(url)
 })
