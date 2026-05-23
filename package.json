@@ -13,7 +13,7 @@
     "build:frontend": "cd frontend && npm run build",
     "build:backend": "cd backend && .\\gradlew.bat bootJar",
     "build:runtime": "powershell -ExecutionPolicy Bypass -File .\\scripts\\copy-java-runtime.ps1",
-    "dist": "electron-builder"
+    "dist": "npm run build:frontend && npm run build:backend && npm run build:runtime && electron-builder"
   },
   "devDependencies": {
     "electron": "^42.2.0",
