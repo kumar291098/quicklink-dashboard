@@ -58,6 +58,10 @@ function loadSplashScreen() {
   return mainWindow.loadURL(`data:text/html;charset=UTF-8,${encodeURIComponent(splashHtml)}`)
 }
 
+function getProjectRoot() {
+  return app.isPackaged ? app.getAppPath() : path.join(app.getAppPath(), '..')
+}
+
 function getRendererEntry() {
   const devServerUrl = process.env.ELECTRON_RENDERER_URL
   if (devServerUrl) {
@@ -66,7 +70,7 @@ function getRendererEntry() {
 
   return {
     type: 'file',
-    value: path.join(app.getAppPath(), 'frontend', 'dist', 'index.html'),
+    value: path.join(getProjectRoot(), 'frontend', 'dist', 'index.html'),
   }
 }
 
@@ -75,7 +79,7 @@ function getBackendJarPath() {
     return path.join(process.resourcesPath, 'backend', BACKEND_JAR_NAME)
   }
 
-  return path.join(app.getAppPath(), 'backend', 'build', 'libs', BACKEND_JAR_NAME)
+  return path.join(getProjectRoot(), 'backend', 'build', 'libs', BACKEND_JAR_NAME)
 }
 
 function getJavaExecutable() {
@@ -83,7 +87,7 @@ function getJavaExecutable() {
 
   const bundledRuntimePath = app.isPackaged
     ? path.join(process.resourcesPath, 'runtime', 'jre', 'bin', executableName)
-    : path.join(app.getAppPath(), 'runtime', 'jre', 'bin', executableName)
+    : path.join(getProjectRoot(), 'runtime', 'jre', 'bin', executableName)
 
   if (require('fs').existsSync(bundledRuntimePath)) {
     return bundledRuntimePath
