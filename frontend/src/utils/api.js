@@ -1,6 +1,6 @@
 const API_BASE =
   typeof window !== 'undefined' && window.location.protocol === 'file:'
-    ? 'http://127.0.0.1:8080'
+    ? 'http://127.0.0.1:58080'
     : ''
 
 export async function fetchJson(path, options = {}) {

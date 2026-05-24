@@ -36,7 +36,7 @@ npm install
 npm run dev
 ```
 
-Frontend runs on `http://localhost:5173` and proxies API requests to `http://localhost:8080`.
+Frontend runs on `http://localhost:55173` and proxies API requests to `http://localhost:58080`.
 
 ## Local Storage
 

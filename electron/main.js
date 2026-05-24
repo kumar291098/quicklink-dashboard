@@ -3,7 +3,7 @@ const { spawn } = require('child_process')
 const http = require('http')
 const path = require('path')
 
-const BACKEND_PORT = 8080
+const BACKEND_PORT = 58080
 const BACKEND_JAR_NAME = 'backend-0.0.1-SNAPSHOT.jar'
 
 let mainWindow
