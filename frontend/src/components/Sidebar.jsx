@@ -3,13 +3,11 @@ function Sidebar({
   categories,
   showFavoritesOnly,
   selectedCategory,
-  searchTerm,
   selectedSort,
   sortOptions,
   onSelectAllLinks,
   onToggleFavorites,
   onSelectCategory,
-  onSearchChange,
   onSortChange,
 }) {
   return (
@@ -20,14 +18,6 @@ function Sidebar({
       </div>
 
       <div className="bottom-filter-controls">
-        <input
-          className="search-input"
-          type="search"
-          value={searchTerm}
-          onChange={(event) => onSearchChange(event.target.value)}
-          placeholder="Search by title, URL, tag, category, or description"
-        />
-
         <select
           className="sort-select"
           value={selectedSort}

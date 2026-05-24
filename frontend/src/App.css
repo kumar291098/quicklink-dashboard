@@ -15,6 +15,22 @@
   box-shadow: var(--card-shadow);
 }
 
+.top-header-brand {
+  color: var(--text-h);
+  font-size: 1.1rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.top-header-search {
+  flex: 1;
+  min-width: 0;
+}
+
+.top-search-input {
+  min-width: 0;
+}
+
 .app-shell {
   display: block;
 }
@@ -320,6 +336,14 @@
   display: block;
 }
 
+.link-grid-compact {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+  align-items: start;
+}
+
 .link-card {
   padding: 12px 14px;
   display: grid;
@@ -328,6 +352,11 @@
   page-break-inside: avoid;
   margin: 0 0 14px;
   width: 100%;
+}
+
+.link-grid-compact .link-card {
+  margin: 0;
+  height: fit-content;
 }
 
 .capsule-card {
@@ -353,6 +382,24 @@
     var(--surface-strong);
   box-shadow: var(--card-shadow-strong);
   outline: none;
+}
+
+.capsule-card-compact {
+  padding: 12px;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.capsule-card-compact:hover,
+.capsule-card-compact:focus-visible {
+  z-index: 20;
+  transform: none;
 }
 
 .capsule-head {
@@ -429,11 +476,71 @@
   margin-top: 2px;
 }
 
+.capsule-card-compact .capsule-extra-compact {
+  position: static;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 0;
+  pointer-events: none;
+}
+
+.capsule-card-compact:hover .capsule-extra-compact,
+.capsule-card-compact:focus-visible .capsule-extra-compact {
+  max-height: 420px;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 2px;
+  pointer-events: auto;
+}
+
 .capsule-text-pill {
   background: var(--surface-muted);
   color: var(--muted);
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.capsule-card-compact .capsule-head {
+  align-items: flex-start;
+}
+
+.capsule-card-compact .link-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.capsule-card-compact .capsule-title-group h4,
+.capsule-card-compact .capsule-title-group a,
+.capsule-card-compact .capsule-pills span,
+.capsule-card-compact .capsule-action {
+  white-space: normal;
+}
+
+.capsule-card-compact .capsule-title-group h4 {
+  font-size: 0.88rem;
+}
+
+.capsule-card-compact .capsule-title-group a {
+  font-size: 0.74rem;
+  word-break: break-word;
+}
+
+.capsule-card-compact .capsule-pills,
+.capsule-card-compact .capsule-actions {
+  gap: 6px;
+}
+
+.capsule-card-compact .capsule-pills span,
+.capsule-card-compact .capsule-action {
+  font-size: 0.7rem;
+  padding: 4px 8px;
+}
+
+.capsule-card-compact .capsule-text-pill {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
 }
 
 .tags-pill {
@@ -518,6 +625,14 @@
     display: block;
   }
 
+  .top-header-search {
+    margin: 16px 0;
+  }
+
+  .link-grid-compact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .main-panel {
     margin-top: 20px;
   }
@@ -551,6 +666,10 @@
 
   .link-grid {
     column-count: 1;
+  }
+
+  .link-grid-compact {
+    grid-template-columns: 1fr;
   }
 
   .card-actions,

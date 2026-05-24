@@ -10,6 +10,8 @@ function LinksSection({
   onToggleFavorite,
   onDelete,
 }) {
+  const useCompactRecentCards = selectedSort === 'recent'
+
   return (
     <section className="section-block">
       <div className="section-heading">
@@ -22,12 +24,13 @@ function LinksSection({
         </span>
       </div>
 
-      <div className="link-grid">
+      <div className={`link-grid ${useCompactRecentCards ? 'link-grid-compact' : ''}`.trim()}>
         {links.map((link) => (
           <LinkCard
             key={link.id}
             link={link}
             selectedSort={selectedSort}
+            compact={useCompactRecentCards}
             relativeTime={relativeTime}
             onOpen={onOpen}
             onEdit={onEdit}

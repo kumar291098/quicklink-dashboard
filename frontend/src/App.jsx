@@ -243,7 +243,9 @@ function App() {
     <div className="page-shell">
       <Header
         theme={theme}
+        searchTerm={searchTerm}
         onAddLink={handleOpenCreate}
+        onSearchChange={setSearchTerm}
         onToggleTheme={() => setTheme((current) => (current === 'dark' ? 'light' : 'dark'))}
       />
 
@@ -286,10 +288,8 @@ function App() {
             categories={categories}
             showFavoritesOnly={showFavoritesOnly}
             selectedCategory={selectedCategory}
-            searchTerm={searchTerm}
             selectedSort={selectedSort}
             sortOptions={sortOptions}
-            onSearchChange={setSearchTerm}
             onSortChange={setSelectedSort}
             onSelectAllLinks={() => {
               setShowFavoritesOnly(false)
