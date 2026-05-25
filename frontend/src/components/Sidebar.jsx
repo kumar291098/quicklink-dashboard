@@ -27,7 +27,7 @@ function Sidebar({
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <img 
-            src="/codinghelp-icon.svg" 
+            src="./codinghelp-icon.svg" 
             alt="CodingHelp Logo" 
             style={{ width: '40px', height: '40px', borderRadius: '10px' }} 
           />

@@ -8,7 +8,7 @@ function Header({
   return (
     <header className="top-header">
       <div className="top-header-brand" style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }} onClick={() => window.location.reload()}>
-        <img src="/codinghelp-icon.svg" alt="CodingHelp Logo" style={{ width: '32px', height: '32px' }} />
+        <img src="./codinghelp-icon.svg" alt="CodingHelp Logo" style={{ width: '32px', height: '32px' }} />
         <span style={{ fontWeight: 800, letterSpacing: '-0.02em' }}>CodingHelp Dashboard</span>
       </div>
       <div className="top-header-search">
