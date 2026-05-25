@@ -1,6 +1,6 @@
 {
   "name": "quicklink-dashboard",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "description": "A local-first desktop link manager built with React, Spring Boot, and Electron.",
   "author": "kumar291098",
