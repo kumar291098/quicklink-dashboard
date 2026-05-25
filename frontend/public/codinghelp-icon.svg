@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <!-- Background Gradient: YouTube Red to Dark Crimson -->
+    <linearGradient id="ch-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF0000" />
+      <stop offset="100%" stop-color="#990000" />
+    </linearGradient>
+    <!-- Soft Glow Filter for Premium Look -->
+    <filter id="ch-glow" x="-15%" y="-15%" width="130%" height="130%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#FF0000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  
+  <!-- Logo Base -->
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#ch-gradient)" filter="url(#ch-glow)"/>
+  
+  <!-- Glossy Reflection Overlay -->
+  <path d="M4 20C4 11.1634 11.1634 4 20 4H44C52.8366 4 60 11.1634 60 20C60 20 48 24 32 24C16 24 4 20 4 20Z" fill="white" fill-opacity="0.08"/>
+  
+  <!-- Outer Play Button Outline -->
+  <path d="M22 17.5C22 15.7 24 14.6 25.5 15.5L46.5 28C48 28.9 48 31.1 46.5 32L25.5 44.5C24 45.4 22 44.3 22 42.5V17.5Z" fill="white"/>
+  
+  <!-- Inner Coding Brackets (< />) inside the Play Button -->
+  <path d="M29 27L26 30L29 33" stroke="#FF0000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M33 27L36 30L33 33" stroke="#FF0000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M32.5 26.5L29.5 33.5" stroke="#FF0000" stroke-width="2" stroke-linecap="round"/>
+</svg>
