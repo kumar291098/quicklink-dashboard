@@ -40,7 +40,7 @@ graph TD
     end
 
     subgraph JVM Backend
-        Spring[Spring Boot Server :58081]
+        Spring[Spring Boot Server :58085]
         H2[(Embedded H2 Database)]
     end
     
@@ -86,8 +86,8 @@ To provide a cohesive user experience across restarts:
 
 ### 5. Responsive API Gateway / Proxy Pattern
 To simplify integration between dev and production:
-- In development, Vite uses a **Proxy Configuration** to forward requests from the UI port `55173` to Spring Boot on `58081`.
-- In production, where files are loaded via the `file://` protocol, the API base URL is dynamically routed directly to `http://127.0.0.1:58081` using a protocol-detection handler in `frontend/src/utils/api.js`.
+- In development, Vite uses a **Proxy Configuration** to forward requests from the UI port `55175` to Spring Boot on `58085`.
+- In production, where files are loaded via the `file://` protocol, the API base URL is dynamically routed directly to `http://127.0.0.1:58085` using a protocol-detection handler in `frontend/src/utils/api.js`.
 
 ### 6. React Performance Optimization Patterns
 - **Deferred Render Input (`useDeferredValue`)**: The search text field utilizes React 19's `useDeferredValue`. It defers updating the link list during active typing, prioritizing smooth keyboard input rendering and preventing UI jank.
@@ -112,7 +112,7 @@ cd frontend
 npm install
 npm run dev
 ```
-The dev server runs on `http://localhost:55173`.
+The dev server runs on `http://localhost:55175`.
 
 ### Desktop Build & Run
 ```powershell

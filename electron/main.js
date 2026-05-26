@@ -3,7 +3,7 @@ const { spawn } = require('child_process')
 const http = require('http')
 const path = require('path')
 
-const BACKEND_PORT = 58081
+const BACKEND_PORT = 58085
 const BACKEND_JAR_NAME = 'backend-0.0.1-SNAPSHOT.jar'
 
 let mainWindow
@@ -12,7 +12,7 @@ let backendProcess
 function createWindow() {
   mainWindow = new BrowserWindow({
     title: 'CodingHelp Dashboard',
-    icon: path.join(__dirname, 'codinghelp-icon.png'),
+    icon: path.join(__dirname, 'quicklink-icon.png'),
     width: 1400,
     height: 900,
     minWidth: 1180,
@@ -414,7 +414,7 @@ app.whenReady().then(async () => {
             <line x1="12" y1="17" x2="12.01" y2="17"/>
           </svg>
           <div class="title">Startup Failed</div>
-          <div class="message">The local JVM backend services could not be started automatically. Ensure no other applications are using port 58081.</div>
+          <div class="message">The local JVM backend services could not be started automatically. Ensure no other applications are using port 58085.</div>
           <div class="details">${error.message}</div>
           <div class="btn-group">
             <button class="btn btn-secondary" onclick="window.close()">Close App</button>

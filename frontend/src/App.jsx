@@ -100,7 +100,7 @@ function App() {
           }
         } catch {
           if (active) {
-            setError('Could not load the dashboard. Start the Spring Boot API on port 58081 and try again.')
+            setError('Could not load the dashboard. Start the Spring Boot API on port 58085 and try again.')
           }
         } finally {
           if (active) {

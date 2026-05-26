@@ -1,6 +1,6 @@
 {
   "name": "quicklink-dashboard",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": true,
   "description": "A local-first desktop link manager built with React, Spring Boot, and Electron.",
   "author": "kumar291098",
@@ -22,7 +22,7 @@
   "build": {
     "appId": "com.quicklink.dashboard",
     "productName": "QuickLink Dashboard",
-    "icon": "electron/codinghelp-icon.png",
+    "icon": "electron/quicklink-icon.png",
     "directories": {
       "output": "release"
     },
@@ -42,7 +42,7 @@
       }
     ],
     "win": {
-      "icon": "electron/codinghelp-icon.png",
+      "icon": "electron/quicklink-icon.png",
       "target": [
         {
           "target": "nsis",
